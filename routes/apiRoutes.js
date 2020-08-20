@@ -5,7 +5,7 @@ const uuid = require('uuid')
 
 
 // GET 
-router.get('/api/notes', (req, res) => {
+router.get('/notes', (req, res) => {
   fs.readFile(join(__dirname, '..', 'db', 'db.json'), 'utf8', (err, data) => {
     if (err) { console.log(err) }
     res.json(JSON.parse(data))
@@ -13,7 +13,7 @@ router.get('/api/notes', (req, res) => {
 })
 
 // POST
-router.post('/api/notes', (req, res) => {
+router.post('/notes', (req, res) => {
 
     fs.readFile(join(__dirname, '..', 'db', 'db.json'), 'utf8', (err, data) => {
       if (err) { console.log(err) }
@@ -35,7 +35,7 @@ router.post('/api/notes', (req, res) => {
   })
 
 // DELETE
-router.delete('/api/notes/:id', (req, res) => {
+router.delete('/notes/:id', (req, res) => {
 
   fs.readFile(join(__dirname, '..', 'db', 'db.json'), 'utf8', (err, data) => {
     if (err) { console.log(err) }
